@@ -57,13 +57,13 @@ export default function Home() {
             </p>
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              
+              <a
                 href="#skills"
                 className="inline-flex items-center justify-center border border-[#c9a35c] bg-[#c9a35c] px-6 py-3 text-sm font-semibold uppercase tracking-wide text-[#15110c] transition-colors hover:bg-[#e0bc7a]"
               >
                 Open the Tome
               </a>
-              
+              <a
                 href="#projects"
                 className="inline-flex items-center justify-center border border-[#4a3c26] px-6 py-3 text-sm font-semibold uppercase tracking-wide text-[#e7dcc3] transition-colors hover:border-[#c9a35c] hover:text-[#c9a35c]"
               >
@@ -133,7 +133,7 @@ export default function Home() {
             Untuk kolaborasi, komisi, atau pertanyaan seputar arsip ini, pesan
             selalu menemukan jalannya.
           </p>
-          
+          <a
             href="mailto:hello@example.com"
             className="inline-block border-b border-[#c9a35c] text-[#c9a35c] transition-colors hover:text-[#e0bc7a]"
           >
