@@ -7,8 +7,8 @@ type TomeGateProps = {
   label?: string;
 };
 
-const OPEN_DURATION_MS = 700;
-const SCROLL_DELAY_MS = 320;
+const OPEN_DURATION_MS = 1100;
+const SCROLL_DELAY_MS = Math.round(OPEN_DURATION_MS * 0.45);
 const CLEANUP_DELAY_MS = OPEN_DURATION_MS + 150;
 
 export default function TomeGate({
@@ -71,7 +71,7 @@ export default function TomeGate({
         <div aria-hidden="true" className="fixed inset-0 z-50 flex pointer-events-none">
           {/* left gate panel */}
           <div
-            className={`relative h-full w-1/2 bg-[#1d1710] transition-transform duration-700 ease-in-out ${
+            className={`relative h-full w-1/2 bg-[#1d1710] transition-transform duration-[1100ms] ease-in-out ${
               isOpen ? '-translate-x-full' : 'translate-x-0'
             }`}
           >
@@ -85,7 +85,7 @@ export default function TomeGate({
 
           {/* right gate panel */}
           <div
-            className={`relative h-full w-1/2 bg-[#1d1710] transition-transform duration-700 ease-in-out ${
+            className={`relative h-full w-1/2 bg-[#1d1710] transition-transform duration-[1100ms] ease-in-out ${
               isOpen ? 'translate-x-full' : 'translate-x-0'
             }`}
           >
@@ -99,7 +99,7 @@ export default function TomeGate({
 
           {/* center seal, fades as the gate splits */}
           <div
-            className={`absolute left-1/2 top-1/2 flex h-16 w-16 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border-2 border-[#c9a35c] bg-[#15110c] transition-opacity duration-300 ${
+            className={`absolute left-1/2 top-1/2 flex h-16 w-16 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border-2 border-[#c9a35c] bg-[#15110c] transition-opacity duration-[1000ms] ${
               isOpen ? 'opacity-0' : 'opacity-100'
             }`}
           >
