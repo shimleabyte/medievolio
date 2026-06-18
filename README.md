@@ -1,4 +1,4 @@
-# Bookfolio
+# Medievolio
 
 A medieval-themed personal portfolio built as a second portfolio page to complement my first portfolio experience.
 
