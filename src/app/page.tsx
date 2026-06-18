@@ -1,65 +1,150 @@
-import Image from "next/image";
-
 export default function Home() {
+  const skills = [
+    "TypeScript",
+    "React",
+    "Next.js",
+    "Node.js",
+    "PostgreSQL",
+    "Tailwind CSS",
+  ];
+
+  const quests = [
+    {
+      title: "The Merchant's Ledger",
+      desc: "Sistem inventaris dan invoicing full-stack untuk guild dagang kecil, dengan pelacakan stok real-time.",
+      tags: ["Next.js", "Postgres", "Stripe"],
+    },
+    {
+      title: "Cartographer's Atlas",
+      desc: "Alat peta interaktif untuk memetakan rute dan wilayah, dirender dengan custom canvas layers.",
+      tags: ["React", "Canvas", "Node.js"],
+    },
+    {
+      title: "The Town Crier",
+      desc: "CMS ringan dan mesin newsletter untuk penerbit kecil yang ingin punya percetakan sendiri.",
+      tags: ["TypeScript", "Next.js", "Resend"],
+    },
+  ];
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <div className="min-h-screen bg-[#15110c] font-sans text-[#e7dcc3] selection:bg-[#c9a35c] selection:text-[#15110c]">
+      <div className="pointer-events-none fixed inset-0 -z-10 bg-[radial-gradient(ellipse_60%_50%_at_50%_-10%,rgba(201,163,92,0.12),transparent)]" />
+
+      <main className="mx-auto flex max-w-3xl flex-col gap-20 px-6 py-16 sm:gap-24 sm:px-10 sm:py-24">
+        {/* HERO */}
+        <section aria-label="Pendahuluan">
+          <div className="relative border border-[#4a3c26] bg-[#1d1710] px-6 py-12 sm:px-12 sm:py-16">
+            <span className="pointer-events-none absolute -left-px -top-px h-4 w-4 border-l-2 border-t-2 border-[#c9a35c]" />
+            <span className="pointer-events-none absolute -right-px -top-px h-4 w-4 border-r-2 border-t-2 border-[#c9a35c]" />
+            <span className="pointer-events-none absolute -bottom-px -left-px h-4 w-4 border-b-2 border-l-2 border-[#c9a35c]" />
+            <span className="pointer-events-none absolute -bottom-px -right-px h-4 w-4 border-b-2 border-r-2 border-[#c9a35c]" />
+
+            <p className="mb-4 text-xs font-medium uppercase tracking-[0.25em] text-[#c9a35c]">
+              Archive No. I — Personal Codex
+            </p>
+            <h1 className="font-serif text-5xl font-semibold tracking-tight text-[#f1e7cf] sm:text-6xl">
+              Bookfolio
+            </h1>
+            <p className="mt-3 font-serif text-lg italic text-[#c9a35c] sm:text-xl">
+              Where old craft meets new code.
+            </p>
+            <p className="mt-6 max-w-xl text-base leading-relaxed text-[#b9ac92] sm:text-lg">
+              Saya developer yang memperlakukan setiap proyek seperti halaman
+              yang layak dijilid — kerja yang tenang dan teliti, dibuat untuk
+              bertahan lebih lama dari tren yang mengantarkannya. Arsip ini
+              menyimpan apa yang sudah saya pelajari, apa yang sudah saya
+              bangun, dan cara menghubungi saya.
+            </p>
+
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              
+                href="#skills"
+                className="inline-flex items-center justify-center border border-[#c9a35c] bg-[#c9a35c] px-6 py-3 text-sm font-semibold uppercase tracking-wide text-[#15110c] transition-colors hover:bg-[#e0bc7a]"
+              >
+                Open the Tome
+              </a>
+              
+                href="#projects"
+                className="inline-flex items-center justify-center border border-[#4a3c26] px-6 py-3 text-sm font-semibold uppercase tracking-wide text-[#e7dcc3] transition-colors hover:border-[#c9a35c] hover:text-[#c9a35c]"
+              >
+                View Quests
+              </a>
+            </div>
+          </div>
+        </section>
+
+        {/* SKILLS */}
+        <section id="skills" aria-labelledby="skills-heading" className="space-y-6">
+          <header className="flex items-baseline gap-4">
+            <span className="font-serif text-sm text-[#8a2e2e]">Chapter I</span>
+            <h2 id="skills-heading" className="font-serif text-2xl text-[#f1e7cf]">
+              Tools of the Craft
+            </h2>
+            <span className="h-px flex-1 bg-[#3a2f1f]" />
+          </header>
+          <ul className="flex flex-wrap gap-3">
+            {skills.map((skill) => (
+              <li
+                key={skill}
+                className="border border-[#4a3c26] bg-[#1d1710] px-4 py-2 text-sm text-[#d8cba9]"
+              >
+                {skill}
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        {/* PROJECTS */}
+        <section id="projects" aria-labelledby="projects-heading" className="space-y-6">
+          <header className="flex items-baseline gap-4">
+            <span className="font-serif text-sm text-[#8a2e2e]">Chapter II</span>
+            <h2 id="projects-heading" className="font-serif text-2xl text-[#f1e7cf]">
+              Quests Completed
+            </h2>
+            <span className="h-px flex-1 bg-[#3a2f1f]" />
+          </header>
+          <div className="grid gap-5 sm:grid-cols-2">
+            {quests.map((q) => (
+              <article key={q.title} className="border border-[#4a3c26] bg-[#1d1710] p-5">
+                <h3 className="font-serif text-lg text-[#f1e7cf]">{q.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-[#b9ac92]">{q.desc}</p>
+                <ul className="mt-4 flex flex-wrap gap-2">
+                  {q.tags.map((t) => (
+                    <li key={t} className="text-xs uppercase tracking-wide text-[#c9a35c]">
+                      {t}
+                    </li>
+                  ))}
+                </ul>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        {/* CONTACT */}
+        <section id="contact" aria-labelledby="contact-heading" className="space-y-6">
+          <header className="flex items-baseline gap-4">
+            <span className="font-serif text-sm text-[#8a2e2e]">Chapter III</span>
+            <h2 id="contact-heading" className="font-serif text-2xl text-[#f1e7cf]">
+              Send a Raven
+            </h2>
+            <span className="h-px flex-1 bg-[#3a2f1f]" />
+          </header>
+          <p className="max-w-md text-sm leading-relaxed text-[#b9ac92]">
+            Untuk kolaborasi, komisi, atau pertanyaan seputar arsip ini, pesan
+            selalu menemukan jalannya.
           </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+          
+            href="mailto:hello@example.com"
+            className="inline-block border-b border-[#c9a35c] text-[#c9a35c] transition-colors hover:text-[#e0bc7a]"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
+            hello@example.com
           </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+        </section>
       </main>
+
+      <footer className="border-t border-[#3a2f1f] px-6 py-8 text-center text-xs uppercase tracking-[0.2em] text-[#5c5238] sm:px-10">
+        Bound &amp; sealed · Bookfolio © {new Date().getFullYear()}
+      </footer>
     </div>
   );
 }
