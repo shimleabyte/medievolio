@@ -43,17 +43,13 @@ export default function Home() {
               Archive No. I — Personal Codex
             </p>
             <h1 className="font-serif text-5xl font-semibold tracking-tight text-[#f1e7cf] sm:text-6xl">
-              Bookfolio
+              Medievolio
             </h1>
             <p className="mt-3 font-serif text-lg italic text-[#c9a35c] sm:text-xl">
-              Where old craft meets new code.
+              A tome of my craft, quests, and contact.
             </p>
             <p className="mt-6 max-w-xl text-base leading-relaxed text-[#b9ac92] sm:text-lg">
-              Saya developer yang memperlakukan setiap proyek seperti halaman
-              yang layak dijilid — kerja yang tenang dan teliti, dibuat untuk
-              bertahan lebih lama dari tren yang mengantarkannya. Arsip ini
-              menyimpan apa yang sudah saya pelajari, apa yang sudah saya
-              bangun, dan cara menghubungi saya.
+              Personal Portofolio bertema Medieval oleh Shimleabyte
             </p>
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -143,7 +139,7 @@ export default function Home() {
       </main>
 
       <footer className="border-t border-[#3a2f1f] px-6 py-8 text-center text-xs uppercase tracking-[0.2em] text-[#5c5238] sm:px-10">
-        Bound &amp; sealed · Bookfolio © {new Date().getFullYear()}
+        Bound &amp; sealed · Mediovolio © {new Date().getFullYear()}
       </footer>
     </div>
   );
