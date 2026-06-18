@@ -1,3 +1,5 @@
+import TomeGate from "@/components/TomeGate";
+
 export default function Home() {
   const skills = [
     "TypeScript",
@@ -57,7 +59,7 @@ export default function Home() {
                 href="#skills"
                 className="inline-flex items-center justify-center border border-[#c9a35c] bg-[#c9a35c] px-6 py-3 text-sm font-semibold uppercase tracking-wide text-[#15110c] transition-colors hover:bg-[#e0bc7a]"
               >
-                Open the Tome
+                <TomeGate targetSelector="#skills" />
               </a>
               <a
                 href="#projects"
