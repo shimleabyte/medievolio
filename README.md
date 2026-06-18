@@ -61,3 +61,5 @@ You can deploy this project using your preferred platform for Next.js applicatio
 
 If you want to connect, you can reach out through the contact section on the site or via your preferred social/profile links.
 
+For now nothing special about it, i use AI to write my README just in case.
+
