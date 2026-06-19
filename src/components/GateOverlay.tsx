@@ -65,10 +65,6 @@ export default function GateOverlay({ isOpen, durationMs }: GateOverlayProps) {
             <path d="M12 5.2v13.5" />
           </svg>
         </div>
-
-        <p className="max-w-36 text-center font-serif text-[10px] uppercase leading-tight tracking-[0.2em] text-[#c9a35c]">
-          Tome of Codedrafting
-        </p>
       </div>
     </div>
   );
