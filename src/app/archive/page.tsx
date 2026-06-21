@@ -1,15 +1,34 @@
 import { Suspense } from 'react';
 import Link from 'next/link';
 import ArchiveEntrance from '@/components/ArchiveEntrance';
+import WantedPoster from '@/components/WantedPoster';
 
 export default function Archive() {
-  const skills = [
-    'TypeScript',
-    'React',
-    'Next.js',
-    'Node.js',
-    'PostgreSQL',
-    'Tailwind CSS',
+  const skillCategories = [
+    {
+      label: 'Frontend',
+      items: ['HTML', 'CSS', 'JavaScript', 'TypeScript', 'React', 'Next.js'],
+    },
+    {
+      label: 'Backend',
+      items: ['Node.js', 'Express', 'PostgreSQL', 'Go'],
+    },
+    {
+      label: 'ORM',
+      items: ['Prisma'],
+    },
+    {
+      label: 'Authentication',
+      items: ['JWT', 'Session'],
+    },
+    {
+      label: 'Deployment',
+      items: ['Vercel', 'Railway'],
+    },
+    {
+      label: 'Tooling',
+      items: ['Bruno', 'Beekeeper Studio'],
+    },
   ];
 
   const quests = [
@@ -46,29 +65,66 @@ export default function Archive() {
           ← Close the Tome
         </Link>
 
-        <section id="skills" aria-labelledby="skills-heading" className="space-y-6">
+        <section id="about" aria-labelledby="about-heading" className="space-y-8">
           <header className="flex items-baseline gap-4">
             <span className="font-serif text-sm text-[#8a2e2e]">Chapter I</span>
+            <h2 id="about-heading" className="font-serif text-2xl text-[#f1e7cf]">
+              The Wanted One
+            </h2>
+            <span className="h-px flex-1 bg-[#3a2f1f]" />
+          </header>
+
+          <div className="flex flex-col items-center gap-8 sm:flex-row sm:items-start">
+            <WantedPoster />
+
+            <div className="max-w-md space-y-4 text-sm leading-relaxed text-[#b9ac92] sm:text-base">
+              <p>
+                Karena gua <span className="text-[#c9a35c]">self-taught</span>,
+                fokus cari kerja, dan kerja modal{' '}
+                <span className="text-[#c9a35c]">laptop kentang</span> —
+              </p>
+              <p>
+                Maka gua pegang stack yang ringan, battle-tested, dan cukup
+                buat bikin aplikasi yang benar-benar dipakai orang. Gak
+                neko-neko, gak ngejar yang lagi tren doang.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section id="skills" aria-labelledby="skills-heading" className="space-y-6">
+          <header className="flex items-baseline gap-4">
+            <span className="font-serif text-sm text-[#8a2e2e]">Chapter II</span>
             <h2 id="skills-heading" className="font-serif text-2xl text-[#f1e7cf]">
               Tools of the Craft
             </h2>
             <span className="h-px flex-1 bg-[#3a2f1f]" />
           </header>
-          <ul className="flex flex-wrap gap-3">
-            {skills.map((skill) => (
-              <li
-                key={skill}
-                className="border border-[#4a3c26] bg-[#1d1710] px-4 py-2 text-sm text-[#d8cba9]"
-              >
-                {skill}
-              </li>
+
+          <div className="grid gap-6 sm:grid-cols-2">
+            {skillCategories.map((cat) => (
+              <div key={cat.label} className="border border-[#4a3c26] bg-[#1d1710] p-4">
+                <h3 className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-[#8a2e2e]">
+                  {cat.label}
+                </h3>
+                <ul className="flex flex-wrap gap-2">
+                  {cat.items.map((item) => (
+                    <li
+                      key={item}
+                      className="border border-[#4a3c26] px-3 py-1 text-sm text-[#d8cba9]"
+                    >
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
             ))}
-          </ul>
+          </div>
         </section>
 
         <section id="projects" aria-labelledby="projects-heading" className="space-y-6">
           <header className="flex items-baseline gap-4">
-            <span className="font-serif text-sm text-[#8a2e2e]">Chapter II</span>
+            <span className="font-serif text-sm text-[#8a2e2e]">Chapter III</span>
             <h2 id="projects-heading" className="font-serif text-2xl text-[#f1e7cf]">
               Quests Completed
             </h2>
@@ -93,7 +149,7 @@ export default function Archive() {
 
         <section id="contact" aria-labelledby="contact-heading" className="space-y-6">
           <header className="flex items-baseline gap-4">
-            <span className="font-serif text-sm text-[#8a2e2e]">Chapter III</span>
+            <span className="font-serif text-sm text-[#8a2e2e]">Chapter IV</span>
             <h2 id="contact-heading" className="font-serif text-2xl text-[#f1e7cf]">
               Send a Raven
             </h2>
